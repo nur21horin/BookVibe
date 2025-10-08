@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Book = ({ singleBook }) => {
   console.log(singleBook);
@@ -15,7 +16,8 @@ const Book = ({ singleBook }) => {
   } = singleBook;
 
   return (
-    <div className="p-4 border rounded-2xl shadow hover:shadow-lg transition duration-300">
+    <Link to={`/bookdetails/${bookId}`}>
+      <div className="p-4 border rounded-2xl shadow hover:shadow-lg transition duration-300">
       <img
         src={image}
         alt={bookName}
@@ -41,6 +43,8 @@ const Book = ({ singleBook }) => {
         </button>
       </div>
     </div>
+    </Link>
+    
   );
 };
 
